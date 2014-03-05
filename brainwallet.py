@@ -40,6 +40,7 @@ class KEY:
             ssl.EC_KEY_set_private_key(self.k, priv_key)
             ssl.EC_KEY_set_public_key(self.k, pub_key)
             ssl.EC_POINT_free(pub_key)
+            ssl.BN_free(priv_key)
             ssl.BN_CTX_free(ctx)
             return self.k
         else:
